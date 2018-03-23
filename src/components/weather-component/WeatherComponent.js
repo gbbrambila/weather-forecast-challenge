@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import SearchBarComponent from './search-bar/SearchBarComponent'
+import CurrentLocationComponent from './current-location/CurrentLocationComponent'
 
 class WeatherComponent extends Component {
     render() {
@@ -10,7 +11,7 @@ class WeatherComponent extends Component {
 
                 <SearchBarComponent />
 
-                
+                <CurrentLocationComponent />
 
             </div>
         )
