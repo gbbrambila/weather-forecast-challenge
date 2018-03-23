@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './CurrentWeatherComponent.scss'
 
 class CurrentWeatherComponent extends Component {
     render() {

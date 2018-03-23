@@ -1,0 +1,23 @@
+.current-weather {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    
+    .current-weather__date {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    
+    .current-weather__temp {
+      position: relative;
+      font-size: 40px;
+      
+      &:after {
+        content: 'o';
+        position: absolute;
+        top: 0;
+        font-size: 20px;
+      }
+    }
+    
+  }
