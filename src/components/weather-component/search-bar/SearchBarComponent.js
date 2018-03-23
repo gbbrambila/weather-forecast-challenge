@@ -19,6 +19,8 @@ class SearchBarComponent extends Component {
 
         const result = await yahooWeatherApi.getWeatherByCity(cityName);
 
+        console.log(result.currentLocation)
+
         handlerAppState({
             loading: false, 
             loaded: true,

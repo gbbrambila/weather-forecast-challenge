@@ -1,31 +1,35 @@
+import axios from 'axios';
+
 class YahooWeatherApi {
 
-    getWeatherByCity(cityName) {
+     getWeatherByCity(cityName) {
 
-        return new Promise(resolve => {
+        return new Promise( (resolve, reject) => {
 
-            const data = {
-                currentLocation: 'Sydney Australia Nsw',
-                currentWeather: { date: 'Friday, 24 Mar 2018 06:00PM', temp: '19' },
-                forecast: [ 
-                    { day: 'Fri', date: '23/03/2018', low: '55', high: 74, text: 'Mostly Cloudy', code: 27 },
-                    { day: 'Fri', date: '23/03/2018', low: '55', high: 74, text: 'Mostly Cloudy', code: 27 },
-                    { day: 'Fri', date: '23/03/2018', low: '55', high: 74, text: 'Mostly Cloudy', code: 27 },
-                    { day: 'Fri', date: '23/03/2018', low: '55', high: 74, text: 'Mostly Cloudy', code: 27 },
-                    { day: 'Fri', date: '23/03/2018', low: '55', high: 74, text: 'Mostly Cloudy', code: 27 },
-                    { day: 'Fri', date: '23/03/2018', low: '55', high: 74, text: 'Mostly Cloudy', code: 27 },
-                    { day: 'Fri', date: '23/03/2018', low: '55', high: 74, text: 'Mostly Cloudy', code: 27 },
-                    { day: 'Fri', date: '23/03/2018', low: '55', high: 74, text: 'Mostly Cloudy', code: 27 },
-                    { day: 'Fri', date: '23/03/2018', low: '55', high: 74, text: 'Mostly Cloudy', code: 27 },
-                    { day: 'Fri', date: '23/03/2018', low: '55', high: 74, text: 'Mostly Cloudy', code: 27 } 
-                ]
-            }
+            axios.get('http://query.yahooapis.com/v1/public/yql', {
+                params: {
+                    q: `select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='${cityName}')`,
+                    format: "json"
+                }
+            }).then( (response) => {
 
-            setTimeout(() => {
-    
-              resolve(data);
-    
-            }, 3000);
+                console.log(response.data.query.results.channel.item.forecast)
+
+                const data = {
+                    currentLocation: response.data.query.results.channel.location,
+                    //currentLocation: '',
+                    currentWeather: response.data.query.results.channel.item.condition,
+                    forecast: response.data.query.results.channel.item.forecast
+                }
+                
+                resolve(data)
+
+            }).catch( (error) => {
+
+                console.log(error);
+                reject(error)
+
+            });
 
         });
 

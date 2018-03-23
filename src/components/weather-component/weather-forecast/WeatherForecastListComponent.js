@@ -7,14 +7,7 @@ class WeatherForecastListComponent extends Component {
     render() {
 
         const forecastItens = this.props.forecast.map((forecast, index) => {
-            return <WeatherForecastItemComponent 
-                    key={ index } 
-                    day={ forecast.day } 
-                    date={ forecast.date }
-                    low={ forecast.low } 
-                    high={ forecast.high } 
-                    text={ forecast.text }
-                    code={ forecast.code } /> 
+            return <WeatherForecastItemComponent key={ index } forecast={ forecast } /> 
         })
 
         return(

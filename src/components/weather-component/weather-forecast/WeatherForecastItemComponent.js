@@ -4,18 +4,21 @@ import './WeatherForecastItemComponent.scss'
 class WeatherForecastItemComponent extends Component {
 
     render() {
+
+        const { day, date, low, high, text, code }  = this.props.forecast
+
         return(
             <li className="forecast-item">
+
+                <div>{ day }</div>
                 
-                <div>Friday</div>
+                {/* <div>{ date }</div> */}
                 
-                <div>23/03/2018</div>
+                <div>Low: { low }</div>
                 
-                <div>Low: 74</div>
+                <div>Hight: { high }</div>
                 
-                <div>High: 74</div>
-                
-                <div>Mostly Cloudy</div>
+                <div>{ text }</div>
 
                 <img src="http://openweathermap.org/img/w/10d.png" alt="" />
 
