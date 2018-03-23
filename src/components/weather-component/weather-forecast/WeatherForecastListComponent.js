@@ -5,7 +5,7 @@ class WeatherForecastListComponent extends Component {
 
     render() {
         return(
-            <ul class="weather-forecast">
+            <ul className="weather-forecast">
                 
                 <WeatherForecastItemComponent />
                 

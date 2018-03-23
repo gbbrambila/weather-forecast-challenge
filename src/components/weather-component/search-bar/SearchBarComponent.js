@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 class SearchBarComponent extends Component {
     render() {
         return(
-            <div class="search-bar">
+            <div className="search-bar">
                 
-                <input class="search-city" type="text" placeholder="Search a city" />
+                <input className="search-city" type="text" placeholder="Search a city" />
                 
-                <button class="search-button">Search</button>
+                <button className="search-button">Search</button>
 
             </div>
         )

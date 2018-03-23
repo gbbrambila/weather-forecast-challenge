@@ -4,7 +4,7 @@ class WeatherForecastItemComponent extends Component {
 
     render() {
         return(
-            <li class="forecast-item">
+            <li className="forecast-item">
                 
                 <div> Friday </div>
                 
