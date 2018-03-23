@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './CurrentLocationComponent.scss'
 
 class CurrentLocationComponent extends Component {
     render() {
