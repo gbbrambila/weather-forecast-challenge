@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import WeatherForecastItemComponent from './WeatherForecastItemComponent';
+import './WeatherForecastListComponent.scss'
 
 class WeatherForecastListComponent extends Component {
 
