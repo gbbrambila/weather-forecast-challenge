@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './SearchBarComponent.scss'
 
 class SearchBarComponent extends Component {
     render() {
