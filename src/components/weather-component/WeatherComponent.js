@@ -13,7 +13,7 @@ class WeatherComponent extends Component {
         this.state = {
             loading: false,
             loaded: false,
-            error: false,
+            error: null,
             currentLocation: null,
             currentWeather: null,
             forecast: [ ]
@@ -61,10 +61,10 @@ class WeatherComponent extends Component {
     }
 
     renderError() {
-        if(this.state.error) {
+        if(this.state.error != null) {
             return (
                 <div>
-                    Error....
+                    { this.state.error.message }
                 </div>
             )
         }

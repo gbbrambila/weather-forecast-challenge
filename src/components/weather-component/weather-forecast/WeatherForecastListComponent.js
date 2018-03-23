@@ -6,7 +6,7 @@ class WeatherForecastListComponent extends Component {
 
     render() {
 
-        const forecastItens = this.props.forecast.map((forecast, index) => {
+        const forecastItens = this.props.forecast.slice(0, 6).map((forecast, index) => {
             return <WeatherForecastItemComponent key={ index } forecast={ forecast } /> 
         })
 

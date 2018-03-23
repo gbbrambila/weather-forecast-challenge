@@ -19,16 +19,22 @@ class SearchBarComponent extends Component {
 
         const result = await yahooWeatherApi.getWeatherByCity(cityName);
 
-        console.log(result.currentLocation)
+        if(result.cityNotFound) {
 
-        handlerAppState({
-            loading: false, 
-            loaded: true,
-            error: false,
-            currentLocation: result.currentLocation,
-            currentWeather: result.currentWeather,
-            forecast: result.forecast,
-        })
+            handlerAppState({
+                error: { message: result.cityNotFound }
+            })
+
+        } else {
+            handlerAppState({
+                loading: false, 
+                loaded: true,
+                error: null,
+                currentLocation: result.currentLocation,
+                currentWeather: result.currentWeather,
+                forecast: result.forecast,
+            })
+        }
 
     }
 

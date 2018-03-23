@@ -13,16 +13,23 @@ class YahooWeatherApi {
                 }
             }).then( (response) => {
 
-                console.log(response.data.query.results.channel.item.forecast)
+                console.log('axios', response)
 
-                const data = {
-                    currentLocation: response.data.query.results.channel.location,
-                    //currentLocation: '',
-                    currentWeather: response.data.query.results.channel.item.condition,
-                    forecast: response.data.query.results.channel.item.forecast
+                if(response.data.query.results === null) {
+
+                    resolve( { cityNotFound: 'City not found! Could you try another term?' } )
+
+                } else {
+                    
+                    const data = {
+                        currentLocation: response.data.query.results.channel.location,
+                        currentWeather: response.data.query.results.channel.item.condition,
+                        forecast: response.data.query.results.channel.item.forecast
+                    }
+                    
+                    resolve(data)
+
                 }
-                
-                resolve(data)
 
             }).catch( (error) => {
 
