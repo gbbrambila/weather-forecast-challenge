@@ -7,7 +7,7 @@ class WeatherForecastItemComponent extends Component {
         return(
             <li className="forecast-item">
                 
-                <div> Friday </div>
+                <div>Friday</div>
                 
                 <div>23/03/2018</div>
                 

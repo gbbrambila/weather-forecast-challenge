@@ -5,8 +5,8 @@ class CurrentWeatherComponent extends Component {
     render() {
         return(
             <div className="current-weather">
-                <h3 className="current-weather__date"> Friday, 23 Mar 2018 06:00PM </h3>
-                <h2 className="current-weather__temp"> 25 </h2>
+                <h3 className="current-weather__date"> { this.props.currentWeather.date } </h3>
+                <h2 className="current-weather__temp"> { this.props.currentWeather.temp } </h2>
             </div>
         )
     }
