@@ -7,7 +7,7 @@ import WeatherForecastListComponent from './weather-forecast/WeatherForecastList
 class WeatherComponent extends Component {
     render() {
         return(
-            <div class="weather-component">
+            <div className="weather-component">
 
                 <SearchBarComponent />
 
