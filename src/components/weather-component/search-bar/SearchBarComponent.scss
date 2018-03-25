@@ -3,29 +3,48 @@
     height: auto;
     padding: 10px 0;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
 
-    .search-button {
+    .location-button {
       width: 20px;
-      height: 30px;
-      margin: 0;
-      padding: 0;
-      position: absolute;
-      top: 5px;
-      right: 0px;
+      height: 20px;
+      margin-top: 5px;
+      margin-right: 20px;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+      }
     }
-    
+
     .search-city {
-      width: 100%;
+      flex-grow: 1;
       height: 20px;
       border: 0px;
       border-bottom: 1px solid #ededed;
       font-size: 20px;
       padding-bottom: 10px;
+      font-size: 14px;
       
       &:focus {
         outline: none;
       }
       
     }
+
+    .search-button {
+      margin-left: 20px;
+    }
+
+    .results-based {
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 40px;
+      color: #a5a5a5;
+    }
+
+    
     
   }

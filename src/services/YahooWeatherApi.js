@@ -13,11 +13,9 @@ class YahooWeatherApi {
                 }
             }).then( (response) => {
 
-                console.log('axios', response)
-
                 if(response.data.query.results === null) {
 
-                    resolve( { cityNotFound: 'City not found! Could you try another term?' } )
+                    resolve( { error: { message: 'City not found! Could you try another term?' } } )
 
                 } else {
                     

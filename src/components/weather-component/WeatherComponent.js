@@ -4,6 +4,7 @@ import SearchBarComponent from './search-bar/SearchBarComponent'
 import CurrentLocationComponent from './current-location/CurrentLocationComponent'
 import CurrentWeatherComponent from './current-weather/CurrentWeatherComponent'
 import WeatherForecastListComponent from './weather-forecast/WeatherForecastListComponent'
+import LoadingComponent from '../loading-component/LoadingComponent';
 
 class WeatherComponent extends Component {
 
@@ -36,11 +37,10 @@ class WeatherComponent extends Component {
     }
 
     renderLoading() {
-        // if loading the content
         if(this.state.loading) {
             return (
                 <div>
-                    Loading...
+                    <LoadingComponent />
                 </div>
             )
         }
@@ -63,7 +63,7 @@ class WeatherComponent extends Component {
     renderError() {
         if(this.state.error != null) {
             return (
-                <div>
+                <div className="weather-error">
                     { this.state.error.message }
                 </div>
             )
