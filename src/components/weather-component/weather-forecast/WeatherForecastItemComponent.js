@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './WeatherForecastItemComponent.scss'
 import { getLongWeekName } from '../../../helpers/WeekDaysHelper'
+import { getIconClass } from '../../../helpers/YahooWeatherIconsHelper';
 
 class WeatherForecastItemComponent extends Component {
 
@@ -11,19 +12,21 @@ class WeatherForecastItemComponent extends Component {
         return(
             <li className="forecast-item">
 
-                <div>
+                <div className="forecast-item__day">
                     <p> { getLongWeekName(day) } </p>
                     <i className="forecast-item__date"> { date } </i>
                 </div>
                 
                 <div>
-                    <span>Low: { low }</span>
-                    <span> High: { high }</span>
+                    <p> <i className="wi wi-direction-up"></i> { high }°</p>
+                    <p> <i className="wi wi-direction-down"></i> { low }°</p>
                 </div>
                 
                 <div className="forecast-item__text ">{ text }</div>
-
-                <img src="http://openweathermap.org/img/w/10d.png" alt="" />
+                
+                <div className="forecast-item__icon">
+                    <i className={`wi ${getIconClass(code)}`}></i>
+                </div>
 
           </li>
         )

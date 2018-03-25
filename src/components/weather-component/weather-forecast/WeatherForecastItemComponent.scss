@@ -9,6 +9,18 @@
     align-items: center;
     justify-content:space-between;
     opacity: 0;
+    padding: 0 10px;
+
+    &:hover {
+        background-color: #f9f9f9;
+        box-shadow: #dadada 0 0 10px 0;    
+        border-radius: 5px;
+    }
+
+    .forecast-item__day {
+        width: 100px;
+        text-align: left;
+    }
 
     .forecast-item__date {
         font-size: 12px;
@@ -16,6 +28,11 @@
 
     .forecast-item__text {
         width: 120px;
+        text-align: center;
+    }
+
+    .forecast-item__icon {
+        width: 20px;
         text-align: center;
     }
       
