@@ -5,12 +5,15 @@
     
     .current-weather__date {
       font-size: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
+      color: #828282;
+      font-weight: normal;
     }
     
     .current-weather__temp {
       position: relative;
       font-size: 40px;
+      margin-top: 0;
       
       &:after {
         content: 'o';
