@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './WeatherForecastItemComponent.scss'
+import { getLongWeekName } from '../../../helpers/WeekDaysHelper'
 
 class WeatherForecastItemComponent extends Component {
 
@@ -10,15 +11,17 @@ class WeatherForecastItemComponent extends Component {
         return(
             <li className="forecast-item">
 
-                <div>{ day }</div>
+                <div>
+                    <p> { getLongWeekName(day) } </p>
+                    <i className="forecast-item__date"> { date } </i>
+                </div>
                 
-                {/* <div>{ date }</div> */}
+                <div>
+                    <span>Low: { low }</span>
+                    <span> High: { high }</span>
+                </div>
                 
-                <div>Low: { low }</div>
-                
-                <div>Hight: { high }</div>
-                
-                <div>{ text }</div>
+                <div className="forecast-item__text ">{ text }</div>
 
                 <img src="http://openweathermap.org/img/w/10d.png" alt="" />
 

@@ -9,6 +9,15 @@
     align-items: center;
     justify-content:space-between;
     opacity: 0;
+
+    .forecast-item__date {
+        font-size: 12px;
+    }
+
+    .forecast-item__text {
+        width: 120px;
+        text-align: center;
+    }
       
     &:nth-child(1) {
         -webkit-animation: fadeIn 0.2s linear forwards;
