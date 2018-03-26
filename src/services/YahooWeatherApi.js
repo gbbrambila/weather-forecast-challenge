@@ -6,7 +6,7 @@ class YahooWeatherApi {
 
         return new Promise( (resolve, reject) => {
 
-            axios.get('http://query.yahooapis.com/v1/public/yql', {
+            axios.get('https://query.yahooapis.com/v1/public/yql', {
                 params: {
                     q: `select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='${cityName}') and u='c'`,
                     format: "json"
